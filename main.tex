@@ -1,0 +1,378 @@
+\documentclass[a4paper]{report}
+\usepackage{style-phd}
+\usepackage{arabtex}
+\usepackage{geometry}       % Page margins
+\usepackage{graphicx}
+
+% Page layout
+\geometry{top=1cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+%%% IMPORTANT NOTE
+%
+% This template requires Perl for the ``glossaries`` package to work 
+% 
+% If you are on Windows environment, download and configure ``Strawberry Perl`` to work with your Latex Editor of choice.
+% http://strawberryperl.com/
+%
+% to compile use: makeglossaries $basename
+%
+% It is possible to compile without using Perl (though NOT tested).
+% 
+% use: makeindex -s $basename.ist -t $basename.glg -o $basename.gls $basename.glo
+%
+% Compile Procedure:
+%
+%      pdfLaTex
+%      BibTex
+%      makeglossaries $basename
+%      pdfLaTex
+%      pdfLaTex
+%      pdflatex main.tex
+%      makeglossaries main
+%      pdflatex main.tex
+%      pdflatex main.tex
+%      
+%%%
+
+
+\begin{document}
+
+
+%%%                        %%%
+%%% Dissertation Info %%%
+%%%                        %%%
+\title{Socioeconomic and Health Impact of COVID 19 in MENA Region} % Capitalized each wordge
+\submitdate{May 2026}
+\approveddate{7}{August}{2026}
+\author{Qais Alomari} % Capitalized each word
+\degree{\phd}{\majorcs} % \phd, \msc, \majorcs, \majorsec, \majords
+
+%%%                %%%
+%%% Supervisor %%%
+%%%                %%%
+\supervisor{\capitalisewords{Supervisor name}} % Capitalized each word
+\supervisorjob{Professor of Computer Science}
+\supervisorTitle{Prof. }
+\supervisoruni{\psut}
+
+%%%                     %%%
+%%% Co-Supervisor %%%
+%%%                     %%%
+% \cosupervisor{Co-Supervisor Name}  % uncomment if needed
+% \cosupervisorjob{Professor}   % uncomment if needed
+% \cosupervisorTitle{Prof. }
+% \cosupervisoruni{University Name}  % uncomment if needed
+
+%%%                           %%%
+%%% External Examiner %%%
+%%%        (main)          %%%
+%%%                           %%%
+\externalExaminerFirst{First External Examiner}
+\externalExaminerFirstJob{Professor}
+\externalExaminerFirstTitle{Prof. }
+\externalExaminerFirstUni{University Name}
+
+%%%                           %%%
+%%% External Examiner %%%
+%%%       (optional)       %%%
+%%%                           %%%
+\externalExaminerSecond{Second External Examiner}  % uncomment if needed
+\externalExaminerSecondJob{Professor}  % uncomment if needed
+\externalExaminerSecondTitle{Prof. }
+\externalExaminerSecondUni{University Name}  % uncomment if needed
+
+%%%                          %%%
+%%% Internal Examiner %%%
+%%%           (1)           %%%
+%%%                          %%%
+\internalExaminerFirst{First Internal Examiner}
+\internalExaminerFirstJob{Professor}
+\internalExaminerFirstTitle{Prof. }
+\internalExaminerFirstUni{\psut}
+
+
+%%%                          %%%
+%%% Internal Examiner %%%
+%%%          (2)            %%%
+%%%                          %%%
+\internalExaminerSecond{Second Internal Examiner}
+\internalExaminerSecondJob{Professor}
+\internalExaminerSecondTitle{Prof. }
+\internalExaminerSecondUni{\psut}
+
+%%%                          %%%
+%%% Internal Examiner %%%
+%%%       (optional)      %%%
+%%%                          %%%
+\internalExaminerThird{Third Internal Examiner}  % uncomment if needed
+\internalExaminerThirdJob{Professor}  % uncomment if needed
+\internalExaminerThirdTitle{Prof. }
+\internalExaminerThirdUni{\psut}  % uncomment if needed
+
+
+\beforepreface
+
+
+%%%                      %%%
+%%% Dedication Page %%%
+%%%      (optional)     %%%
+%%%                        %%%
+\newgeometry{top=1cm, bottom=2.5cm,left=2cm,right=2.5cm}
+\prefacesection{Dedication}
+\large
+I dedicate this work to....
+
+\begin{flushright} 
+\vspace{0.5in}
+\textbf{Enter Your Name} 
+\end{flushright}
+
+
+
+%%%                                  %%%
+%%% Acknowledgments Page %%%
+%%%           (optional)          %%%
+%%%                                  %%%
+\newgeometry{top=2cm, bottom=2.5cm,left=2cm,right=2.5cm}
+\prefacesection{Acknowledgments}{\large
+Type your acknowledgments here.
+
+Your acknowledgments section must contain multiple short paragraphs (5-6 paragraphs), start with praises and thanks to Allah almighty, second paragraph for your supervisor , a paragraph for your parents and family, a paragraph for a person that you want to mention in name , a short paragraph for your friends a colleagues and finally a short paragraph for the examiners and committee members...
+
+
+
+\begin{flushright} 
+\vspace{0.5in}
+\textbf{Enter Your Name} 
+\end{flushright}
+}
+
+%%%                                  %%%
+%%% Generative AI Usage Declaration %%%
+%%%                                  %%%
+\newgeometry{top=2cm, bottom=2.5cm,left=2cm,right=2.5cm}
+\prefacesection{Generative AI Usage Declaration}{\large
+I, ………………………………………………hereby declare that:
+
+I.	I am solely responsible for all the content provided in this work, including any AI-generated content.
+
+II.	I am solely responsible for any copyright issues that could result from using generative AI tools or otherwise.
+
+III.	All the Generative AI tools I have used during the preparation of this work are listed in the table below, and failure to disclose any usage is considered academic misconduct or plagiarism that could result in degree revocation.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+\textbf{Tool} & \textbf{Extent of Use} & \textbf{Purpose of Use} \\
+\textbf{(Name \& Version)} & \textbf{(Chapter(s), Section(s) or Page(s))} & \\ 
+\hline
+ & & \\ \hline
+ & & \\ \hline
+ & & \\ \hline
+    \end{tabular}
+    \label{tab:placeholder}
+\end{table}
+
+
+\begin{flushleft} 
+\vspace{0.5in}
+\textbf{Signature:}
+\\
+\vspace{0.5in}
+\textbf{Date:}
+\end{flushleft}
+}
+
+
+%%%                       %%%
+%%% Acronyms Page %%%
+%%%                       %%%
+%
+%After the acronyms have been included in the preamble, they can be used by means on the next commands:
+%
+%\acrlong{ }
+%Displays the phrase which the acronyms stands for. Put the label of the acronym inside the braces. In the example, \acrlong{gcd} prints Greatest Common Divisor.
+%
+%\acrshort{ }
+%Prints the acronym whose label is passed as parameter. For instance, \acrshort{gcd} renders as GCD.
+%\acrfull{ }
+%
+%Prints both, the acronym and its definition. In the example the output of \acrfull{lcm} is Least Common Multiple (LCM).
+%
+% \newacronym{gcd}{GCD}{Greatest Common Divisor} % Example
+
+
+\afterpreface % to add list of table, figures, etc.
+
+
+%%%                     %%%
+%%% Abstract Page %%%
+%%%                     %%%
+\newgeometry{top=2cm, bottom=2.5cm,left=2.5cm,right=2.5cm}
+\abstract{Abstract}{
+Type your abstract here. You may need to write multiple paragraphs; make sure to follow the instructions for writing an abstract.
+
+Always make sure to leave a blank space at the start of the paragraph. If you used an abbreviation, you need to state the meaning first, capitalizing each word, and then write it between parentheses; for example, I study at Princess Sumaya University for Technology (PSUT).
+
+Abstract lines are single-spaced, only the default 1pt, but paragraphs are, make sure the lines are justified.
+All of the above instructions are saved in a defined style 'Abstract' once you choose it from the Style section and it will automatically apply.
+
+Your abstract must provide the reader with a clear and inclusive idea about your study, your approaches, the problem, your methodology, your tools, and a summary of your results and conclusions, all of which must be addressed in a brief way.
+\\ \\ \textbf{Keywords:\quad} Keyword1, Keyword2, …, Keyword n .
+}
+
+
+
+
+\startchapters
+
+\newgeometry{top=0.5cm, bottom=2.5cm,left=2.5cm,right=2.5cm}
+\chapter{Introduction}
+
+This dissertation studies the socioeconomic and health impact of the COVID-19 pandemic across the Middle East and North Africa (MENA) region using an ELT pipeline that integrates public health outcomes, demographic context, and macro-socioeconomic indicators.
+The objective is to create a curated, analysis-ready panel that supports reproducible country-level comparisons, derived metrics (e.g., per-capita normalization and composite vulnerability measures), and quality assurance artifacts that make missingness and coverage explicit.
+
+\section{Motivation and problem statement}
+COVID-19 affected countries heterogeneously due to differences in demographics, baseline health system capacity, vaccination rollout, and socioeconomic context.
+For MENA specifically, cross-country analysis is complicated by uneven reporting, inconsistent temporal coverage, and indicator definitions that vary across sources.
+This work addresses these challenges by (i) integrating multiple sources through a unified observation model, (ii) enforcing a consistent geography scope, and (iii) producing marts and QA tables that surface gaps before modeling.
+
+\section{Research objectives}
+This project aims to:
+\begin{itemize}
+    \item Build a reproducible ELT pipeline that extracts indicators from public sources, loads them into a local warehouse, and produces curated marts.
+    \item Standardize country mapping and indicator semantics to enable comparable longitudinal analysis.
+    \item Quantify and document missingness, coverage windows, and potential data quality issues.
+    \item Derive interpretable metrics that connect health outcomes to socioeconomic and demographic context.
+\end{itemize}
+
+\section{Scope and unit of analysis}
+The analysis focuses on a fixed set of MENA countries (with explicit inclusions/exclusions defined by the project allowlist) and uses country-time observations as the unit of analysis.
+Indicators are treated as time series with potentially different temporal resolutions (daily, monthly, yearly), and later transformations reconcile these differences when constructing analysis datasets.
+
+\section{Pipeline overview (ELT)}
+The pipeline follows an ELT design:
+\begin{enumerate}
+    \item \textbf{Extract}: query indicator series from external sources.
+    \item \textbf{Load}: store normalized observations into a star-schema warehouse (dimensions and a fact table).
+    \item \textbf{Transform}: build curated marts (panel, outcomes, vaccination, context) and QA artifacts (missingness, completeness, coverage, and validation logs).
+\end{enumerate}
+
+\section{Thesis organization}
+Chapter 2 describes the datasets, indicator families, and data contracts.
+Subsequent chapters (to be completed) present the methodology, derived metrics, results, and conclusions.
+
+\chapter{Dataset}
+\section{Data sources}
+The dataset is constructed by integrating multiple public indicator sources (e.g., health outcomes, vaccination, demographic and socioeconomic context) accessed via an external data API and other published statistical series.
+All extracted series are reshaped into a single long-form contract and then loaded into a local PostgreSQL data warehouse.
+
+\section{Geographic scope (MENA allowlist)}
+The pipeline enforces a fixed geographic scope through an allowlist of country codes.
+This hard filter ensures that transformations, marts, and QA summaries are computed consistently for the same set of countries and are not silently contaminated by out-of-scope geographies.
+
+\section{Observation model and schema}
+Before loading and transformation, all source time series are normalized to the following long schema:
+\begin{itemize}
+    \item \texttt{date}: observation timestamp (daily/monthly/yearly depending on indicator)
+    \item \texttt{entity}: country identifier (canonical name or code)
+    \item \texttt{variable}: indicator identifier (source-specific name or code)
+    \item \texttt{value}: numeric observation value
+\end{itemize}
+In the warehouse, observations are stored in a star schema with country, indicator, and source dimensions and a fact table of observations.
+
+\section{Curated marts}
+After loading, the pipeline creates curated outputs for analysis:
+\begin{itemize}
+    \item \textbf{Long panel mart}: harmonized indicator series in long format.
+    \item \textbf{Yearly panel mart}: annualized/aggregated view for slow-moving contextual covariates.
+    \item \textbf{Health outcomes mart}: outcomes-focused view (cases, deaths, derived rates).
+    \item \textbf{Vaccination mart}: vaccination progression metrics and lags.
+    \item \textbf{Context mart}: demographic and socioeconomic context variables.
+\end{itemize}
+
+\section{Missingness and coverage}
+Due to heterogeneous reporting across sources and countries, missingness is expected.
+The pipeline therefore generates QA artifacts that summarize:
+\begin{itemize}
+    \item Missingness by country and variable (including 100\% missing country-variable pairs).
+    \item Completeness matrices to visualize gaps.
+    \item Start/end date coverage by country-feature pair.
+\end{itemize}
+These QA outputs guide downstream modeling decisions such as exclusion of fully-missing pairs and conservative imputation policies.
+
+\section{Limitations}
+Key limitations include non-overlapping time windows across indicators and countries, inconsistent update frequency, and differing measurement definitions across sources.
+Accordingly, downstream analysis must either restrict to common windows, build unbalanced panels, or use dataset views that are explicit about coverage constraints.
+
+
+% \chapter{Conclusions}
+% ...
+% \begin{appendices}
+% % Use the appendixchapter command to introduce each appendix
+% \appendixchapter{An appendix without sections}
+% \appendixchapter{An appendix with sections}
+% % Use the appendixsection and related commands for sections and subsections in appendices. 
+% % Don't use the regular section commands or weird stuff will happen.
+% % You probably don't need an appendixsubsubsection command, but if you do, you'll need to figure out the spacing for its title yourself.
+% \appendixsection{An example section in an appendix}
+% \appendixsubsection{An example subsection in an appendix}
+% \end{appendices}
+
+\newpage
+\newgeometry{top=1cm, bottom=2.5cm,left=2.5cm,right=2.5cm}
+\thispagestyle{empty} % Remove header and footer for this page
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+
+\newpage
+\newgeometry{top=0.01cm, bottom=2.5cm,left=2.5cm,right=2.5cm}
+\thispagestyle{empty} % Remove header and footer for this page
+\prefacesection{IRB Approval}{\large}
+
+
+\thispagestyle{empty} % Remove header and footer for this page
+\newgeometry{top=0.01cm, bottom=2.5cm,left=2.5cm,right=2.5cm}
+\prefacesection{الملخص}
+
+\RL{ادخل عنوان الرسالة}\large\centering
+
+\RL{\textbf{إعداد}}\large\centering
+
+\RL{ادخل اسمك هنا}\large\centering
+\vspace{0.5cm}
+
+\RL{المشرف}\large\centering
+
+\RL{ادخل اسم المشرف}\large\centering
+\vspace{0.5cm}
+
+\addcontentsline{toc}{chapter}{الملخص}
+\begin{center}
+\RL{\textbf{\large الملخص}}
+\end{center}
+
+\vspace{1cm}
+
+\begin{flushright}
+{
+\RL{قم بكتابة الملخص باللغة العربية هنا، تأكد من أن حجم الخط 14 و أن نوعه \LR{Simplified Arabic}.
+تم حفظ إعدادات الكتابة في \LR{Arabic Abstract}.}
+
+\RL{يجب الانتباه إلى أنه لايمثل الترجمة الحرفية لما ورد في الملخص المكتوب باللغة الإنجليزية، وإنما هو ملخص تجريدي، يصف المشكلة، والأسلوب المتبع في حلها، والنتائج التي تم التوصل إليها في البحث، على شكل فقرات متسلسلة، تتكون من مجموعة من الجمل المترابطة، التي تم ربطها من خلال أدوات الربط المناسبة.}
+
+\RL{يعتبر الملخص من أهم أجزاء الرسالة؛ لأنه يعطينا مؤشراً مهماً أثناء اختيارنا للأبحاث، والدراسات السابقة؛ فهو يساعدنا في تحديد مدى علاقة البحث بموضوع الرسالة، ومن هنا تظهر أهمية العناية بإعداده وإخراجه بالشكل المناسب.}
+
+\vspace{1cm}
+\RL{\textbf{الكلمات المفتاحية:}}
+}
+\end{flushright}
+
+
+%/You should include the Abstract in the Arabic Language based on the official form here (\url{https://psut.edu.jo/uploads/2022/05/4-abstract-in-arabic-template.docx?language=ar}) %% You can combine the Abstract in the Arabic Language pdf with the dissertation pdf
+
+
+
+\end{document}
