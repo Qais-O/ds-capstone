@@ -1,7 +1,7 @@
 # Data Pipeline Status
 
 **Project:** MENA COVID and Resilience ELT Analysis  
-**Last Updated:** 2026-03-23  
+**Last Updated:** 2026-04-07  
 **Canonical Implementation:** `data_pipeline.ipynb` (notebook-first)
 
 ---
@@ -33,7 +33,31 @@
 
 ---
 
-## 2) Canonical ELT Flow (Notebook Order)
+## 2) Study Goals and Research Questions (Current Scope)
+
+### Overall study objective
+- Build a reproducible ELT-driven evidence base to analyze how COVID-19 health outcomes in MENA relate to vaccination progress, demographic structure, and socioeconomic context.
+
+### Core goals
+- Produce analysis-ready country-time datasets from heterogeneous public indicators with clear transformation rules.
+- Quantify and document data limitations (missingness, coverage gaps, validation issues) before modeling.
+- Derive interpretable resilience features (for example: per-capita burden, CFR, urbanization ratio, demographic vulnerability) that support comparable inference.
+- Enable both cross-country and within-country analysis while making temporal overlap constraints explicit.
+
+### Study questions the pipeline should answer
+- How did COVID-19 burden vary across the 16-country MENA scope after normalization?
+- What relationship is observed between vaccination progression and mortality outcomes?
+- Which contextual factors (demographic and socioeconomic) are associated with better or worse outcome trajectories?
+- Are conclusions stable across unbalanced coverage views and stricter balanced-core sensitivity views?
+
+### Success criteria
+- Marts and QA outputs are reproducible from warehouse-backed runs.
+- Missingness and date-coverage limitations are reported alongside results.
+- Main findings are supported in `ds_unbalanced_panel` and tested for robustness in `ds_balanced_core`.
+
+---
+
+## 3) Canonical ELT Flow (Notebook Order)
 
 ### Phase 1-5: Extract and domain shaping
 Build source DataFrames using `fetch_and_process_data(...)` and `apply_country_mapping(...)`.
@@ -80,9 +104,15 @@ Create QA outputs:
 ### Phase 8: Diagnostics
 - Box plots and quick diagnostics over numeric transformed variables.
 
+### Phase 9: Stage 3 Forecasting (R script)
+- Forecasting implementation is in `stage_3_forecasting.R`.
+- Default source is PostgreSQL (`dw.*`) with optional file/auto source modes.
+- Forecasting is performed per country and per COVID-related metric.
+- Outputs are written to `transformed/`.
+
 ---
 
-## 3) Data Contracts and Normalization Rules
+## 4) Data Contracts and Normalization Rules
 
 ### Long schema contract (input to transforms)
 Required columns:
@@ -110,7 +140,7 @@ Optional:
 
 ---
 
-## 4) Missingness and Imputation Policy (Current)
+## 5) Missingness and Imputation Policy (Current)
 
 This policy is now the project default.
 
@@ -128,7 +158,7 @@ This policy is now the project default.
 
 ---
 
-## 5) Date Coverage and Time-Series Alignment
+## 6) Date Coverage and Time-Series Alignment
 
 The pipeline now tracks start/end coverage for each country-feature pair and summarizes by feature.
 
@@ -143,7 +173,7 @@ Purpose:
 
 ---
 
-## 6) Analysis Dataset Strategy (Simplified Three-View)
+## 7) Analysis Dataset Strategy (Simplified Three-View)
 
 ### A) `ds_unbalanced_panel`
 - Keeps maximum country coverage.
@@ -163,9 +193,48 @@ Purpose:
 - Treat `ds_unbalanced_panel` as primary default for cross-country analyses.
 - Use `ds_balanced_core` as sensitivity/robustness view when sample size is adequate.
 
+### Stage 2 cluster analysis question bank (descriptive segmentation)
+
+Current clustering basis (latest Stage 2 run):
+- `LifeExpectancy_Person`
+- `Count_Person`
+- `demographic_vulnerability_index`
+- `Count_Person_15To64Years_InLaborForce_AsFractionOf_Count_Person_15To64Years`
+
+Per-cluster questions to guide interpretation:
+
+1. Structural profile
+- Is this cluster characterized by higher/lower life expectancy than the full 16-country median?
+- Are countries in this cluster systematically larger/smaller by population scale?
+- Does this cluster show higher demographic vulnerability than other clusters?
+- Is labor-force participation structurally stronger/weaker relative to peer clusters?
+
+2. COVID burden and severity
+- What are cluster-level medians and IQRs for `cases_per_million`, `deaths_per_million`, and `case_fatality_rate_pct`?
+- Which cluster reaches the highest CFR peak, and at what date window?
+- Which cluster has the fastest post-peak decline in deaths per million?
+
+3. Vaccination progression and outcome linkage
+- How quickly does each cluster progress across `vax_at_least_one_pct`, `vax_primary_pct`, and `vax_booster_pct`?
+- Are larger vaccination progression gaps (`gap_one_to_primary_pct`, `gap_primary_to_booster_pct`) concentrated in specific clusters?
+- After vaccination increases, do clusters differ in lagged CFR/death improvements?
+
+4. Resilience and heterogeneity
+- Are there within-cluster outlier countries that materially outperform or underperform cluster medians?
+- Which cluster combines weaker structural context with better-than-expected COVID outcomes (positive deviance)?
+- Which cluster appears most sensitive to shocks (high volatility over time in outcomes)?
+
+5. Robustness checks
+- Do cluster-level conclusions remain directionally consistent between `ds_unbalanced_panel` and `ds_balanced_core`?
+- Are findings stable when using median-based summaries vs mean-based summaries?
+- Do results persist when excluding single-country outliers from each cluster?
+
+Interpretation guardrail:
+- Cluster findings are descriptive/associational and should not be framed as causal effects.
+
 ---
 
-## 7) Latest Reported Run Snapshot (User-verified)
+## 8) Latest Reported Run Snapshot (User-verified)
 
 Derived marts:
 - `mart_panel_long`: 75,928 rows
@@ -190,7 +259,35 @@ Balanced predictors in latest run:
 
 ---
 
-## 8) Known Operational Notes
+## 9) Stage 3 Forecasting Status (Current)
+
+### Implementation summary
+- Stage 3 is implemented as an R-based forecasting workflow in `stage_3_forecasting.R`.
+- The script pulls directly from Postgres by default (`--source postgres`).
+- Forecasts are generated for COVID-related metrics detected from the input panel.
+
+### Current Stage 3 defaults
+- Source: `postgres`
+- Aggregation: `month`
+- Model family: `auto.arima` with bounded runtime defaults (`approximation=TRUE`, `stepwise=TRUE`)
+- Forecast horizon default: `6`
+
+### Stage 3 outputs
+- `transformed/stage3_forecasts.csv`
+- `transformed/stage3_model_metrics.csv`
+- `transformed/stage3_forecast_panels.png`
+
+### Canonical Stage 3 run command
+- `Rscript stage_3_forecasting.R --source postgres --aggregate month --max-series 120`
+
+### Notes from latest implementation cycle
+- Forecast generation completed after fixing aggregation and plotting issues.
+- Plot rendering is now interactive-session aware (`interactive()`), so charts display in RStudio while still saving PNG artifacts.
+- Package-version warnings (for example, packages built under R 4.3.3) are non-fatal unless paired with runtime errors.
+
+---
+
+## 10) Known Operational Notes
 
 - Local Postgres connectivity can differ by IDE/runtime environment.
 - If `try_default_postgres_connection()` fails in one IDE but works in another, compare:
@@ -202,7 +299,7 @@ Balanced predictors in latest run:
 
 ---
 
-## 9) Explicit Exclusions and Cleanup Decisions
+## 11) Explicit Exclusions and Cleanup Decisions
 
 To keep document and pipeline aligned, the following legacy items are removed from active scope:
 - 17-country framing (replaced by 16-country allowlist).
@@ -212,7 +309,7 @@ To keep document and pipeline aligned, the following legacy items are removed fr
 
 ---
 
-## 10) Next Implementation Priorities
+## 12) Next Implementation Priorities
 
 1. Keep checkpoint-before-Phase-7 cell stable and rerun-safe.
 2. Persist run-level QA metadata (counts, min/max dates, exclusions) to warehouse QA tables per execution.
@@ -222,3 +319,7 @@ To keep document and pipeline aligned, the following legacy items are removed fr
    - overlap window,
    - effective sample size.
 4. Continue derived-metric analysis using unbalanced panel as primary and balanced core as robustness check.
+5. Add Stage 3 forecast governance checks:
+  - minimum data points by country-metric,
+  - forecast plausibility thresholds,
+  - automatic fallback model logging for failed ARIMA fits.
