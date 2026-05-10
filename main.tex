@@ -1,8 +1,8 @@
 \documentclass[a4paper]{report}
-\usepackage{style-phd}
-\usepackage{arabtex}
-\usepackage{geometry}       % Page margins
-\usepackage{graphicx}
+\RequirePackage{style-phd}
+\RequirePackage{arabtex}
+\RequirePackage{geometry}       % Page margins
+\RequirePackage{graphicx}
 
 % Page layout
 \geometry{top=1cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
@@ -63,51 +63,51 @@
 % \cosupervisorTitle{Prof. }
 % \cosupervisoruni{University Name}  % uncomment if needed
 
-%%%                           %%%
-%%% External Examiner %%%
-%%%        (main)          %%%
-%%%                           %%%
-\externalExaminerFirst{First External Examiner}
-\externalExaminerFirstJob{Professor}
-\externalExaminerFirstTitle{Prof. }
-\externalExaminerFirstUni{University Name}
+% %%%                           %%%
+% %%% External Examiner %%%
+% %%%        (main)          %%%
+% %%%                           %%%
+% \externalExaminerFirst{First External Examiner}
+% \externalExaminerFirstJob{Professor}
+% \externalExaminerFirstTitle{Prof. }
+% \externalExaminerFirstUni{University Name}
 
-%%%                           %%%
-%%% External Examiner %%%
-%%%       (optional)       %%%
-%%%                           %%%
-\externalExaminerSecond{Second External Examiner}  % uncomment if needed
-\externalExaminerSecondJob{Professor}  % uncomment if needed
-\externalExaminerSecondTitle{Prof. }
-\externalExaminerSecondUni{University Name}  % uncomment if needed
+% %%%                           %%%
+% %%% External Examiner %%%
+% %%%       (optional)       %%%
+% %%%                           %%%
+% \externalExaminerSecond{Second External Examiner}  % uncomment if needed
+% \externalExaminerSecondJob{Professor}  % uncomment if needed
+% \externalExaminerSecondTitle{Prof. }
+% \externalExaminerSecondUni{University Name}  % uncomment if needed
 
-%%%                          %%%
-%%% Internal Examiner %%%
-%%%           (1)           %%%
-%%%                          %%%
-\internalExaminerFirst{First Internal Examiner}
-\internalExaminerFirstJob{Professor}
-\internalExaminerFirstTitle{Prof. }
-\internalExaminerFirstUni{\psut}
+% %%%                          %%%
+% %%% Internal Examiner %%%
+% %%%           (1)           %%%
+% %%%                          %%%
+% \internalExaminerFirst{First Internal Examiner}
+% \internalExaminerFirstJob{Professor}
+% \internalExaminerFirstTitle{Prof. }
+% \internalExaminerFirstUni{\psut}
 
 
-%%%                          %%%
-%%% Internal Examiner %%%
-%%%          (2)            %%%
-%%%                          %%%
-\internalExaminerSecond{Second Internal Examiner}
-\internalExaminerSecondJob{Professor}
-\internalExaminerSecondTitle{Prof. }
-\internalExaminerSecondUni{\psut}
+% %%%                          %%%
+% %%% Internal Examiner %%%
+% %%%          (2)            %%%
+% %%%                          %%%
+% \internalExaminerSecond{Second Internal Examiner}
+% \internalExaminerSecondJob{Professor}
+% \internalExaminerSecondTitle{Prof. }
+% \internalExaminerSecondUni{\psut}
 
-%%%                          %%%
-%%% Internal Examiner %%%
-%%%       (optional)      %%%
-%%%                          %%%
-\internalExaminerThird{Third Internal Examiner}  % uncomment if needed
-\internalExaminerThirdJob{Professor}  % uncomment if needed
-\internalExaminerThirdTitle{Prof. }
-\internalExaminerThirdUni{\psut}  % uncomment if needed
+% %%%                          %%%
+% %%% Internal Examiner %%%
+% %%%       (optional)      %%%
+% %%%                          %%%
+% \internalExaminerThird{Third Internal Examiner}  % uncomment if needed
+% \internalExaminerThirdJob{Professor}  % uncomment if needed
+% \internalExaminerThirdTitle{Prof. }
+% \internalExaminerThirdUni{\psut}  % uncomment if needed
 
 \doctype{Dissertation}
 
@@ -121,7 +121,7 @@
 \newgeometry{top=1cm, bottom=2.5cm,left=2cm,right=2.5cm}
 \prefacesection{Dedication}
 \large
-I dedicate this work to....
+I dedicate this work to my family, friends, and colleagues who supported me throughout this journey. Their encouragement and patience made this work possible, and I hope it contributes to future research on the impact of COVID-19 at local, regional, and global levels.
 
 \begin{flushright} 
 \vspace{0.5in}
@@ -136,9 +136,18 @@ I dedicate this work to....
 %%%                                  %%%
 \newgeometry{top=2cm, bottom=2.5cm,left=2cm,right=2.5cm}
 \prefacesection{Acknowledgments}{\large
-Type your acknowledgments here.
 
-Your acknowledgments section must contain multiple short paragraphs (5-6 paragraphs), start with praises and thanks to Allah almighty, second paragraph for your supervisor , a paragraph for your parents and family, a paragraph for a person that you want to mention in name , a short paragraph for your friends a colleagues and finally a short paragraph for the examiners and committee members...
+Praise be to Allah Almighty for His guidance and support throughout the preparation of this capstone project in pursuit of the Master of Science degree in Data Science.
+
+I am deeply grateful to my supervisor, Prof. Saleh Abu Soud, for his guidance, encouragement, and constructive feedback throughout this work.
+
+I sincerely thank my parents and siblings for their unconditional support, patience, and encouragement, and I am equally grateful to my close friends for their motivation throughout my studies.
+
+I also extend my appreciation to Dr. Mohammad Azzeh, Dr. Bushra Alihijawi, Dr. Serin Altai, Dr. Osama AbdelHay, and Dr. Mohammad Abdulrahman for their teaching and support during my MSc studies, which formed an important foundation for this work.
+
+Finally, I thank the examiners and committee members for their time, consideration, and valuable assessment. I hope this thesis reflects the knowledge and skills I have gained and demonstrates my commitment to learning and applying data science methods with academic rigor.
+
+% Your acknowledgments section must contain multiple short paragraphs (5-6 paragraphs), start with praises and thanks to Allah almighty, second paragraph for your supervisor , a paragraph for your parents and family, a paragraph for a person that you want to mention in name , a short paragraph for your friends a colleagues and finally a short paragraph for the examiners and committee members...
 
 
 
@@ -244,12 +253,12 @@ This project would compare the studied countries robustness to near-future pande
 This capstone project studies the socioeconomic and health impact of the COVID-19 pandemic across the Middle East and North Africa (MENA) region using an ELT pipeline that integrates public health outcomes, demographic context, and macro-socioeconomic indicators.
 The objective is to analyze the underlying factors that led to the pandemic reported cases / deaths / vaccination trajectory  that provides a curated, analysis-ready panel that supports reproducible country-level comparisons, derived metrics (e.g., per-capita normalization and composite vulnerability measures), and quality assurance artifacts that make missingness and coverage explicit.
 
-\section{Motivation and problem statement}
+\section{Motivation and Problem Statement}
 COVID-19 affected countries heterogeneously due to differences in demographics, baseline health system capacity, vaccination rollout, and socioeconomic context.
 For MENA specifically, cross-country analysis is complicated by uneven reporting, inconsistent temporal coverage, and indicator definitions that vary across sources.
 This work addresses these challenges by (i) integrating multiple sources through a unified observation model, (ii) enforcing a consistent geography scope, and (iii) producing curated analysis tables and quality assurance (QA) tables that surface gaps before modeling.
 
-\section{Research objectives}
+\section{Research Objectives}
 This project aims to:
 \begin{itemize}
     \item Build a reproducible ELT pipeline that extracts indicators from public sources, loads them into a local warehouse, and produces curated analysis tables.
@@ -258,34 +267,71 @@ This project aims to:
     \item Derive interpretable metrics that connect health outcomes to socioeconomic and demographic context.
 \end{itemize}
 
-\section{Scope and unit of analysis}
+\section{Scope and Unit of Analysis}
 The analysis focuses on a fixed set of 16 MENA countries: United Arab Emirates, Bahrain, Egypt, Iran, Iraq, Israel (Occupied Interior), Jordan, Kuwait, Lebanon, Oman, Palestine (Occupied Palestinian Territories), Qatar, Saudi Arabia, Syria, Turkey, and Yemen.
-Country-time observations are the unit of analysis, and the allowlist is enforced consistently across extraction, loading, transformation, and QA outputs.
+Country-time observations are the unit of analysis, and the allowlist is enforced consistently across extraction, loading, transformation, and data quality outputs.
 Indicators are treated as time series with potentially different temporal resolutions (daily, monthly, yearly), and later transformations reconcile these differences when constructing analysis datasets.
+ 
 
-\section{Pipeline overview (ELT)}
+\section{Pipeline Overview (ELT)}
 The pipeline follows an ELT design:
 \begin{enumerate}
     \item \textbf{Extract}: query indicator series from external sources.
     \item \textbf{Load}: store normalized observations into a star-schema warehouse (dimensions and a fact table).
-    \item \textbf{Transform}: build curated analysis tables (panel, outcomes, vaccination, context) and QA artifacts (missingness, completeness, coverage, and validation logs).
+    \item \textbf{Transform}: build curated analysis tables (panel, outcomes, vaccination, context) and data quality artifacts (missingness, completeness, coverage, and validation logs).
 \end{enumerate}
 
-\section{Capstone project organization}
+\section{Implementation Environment}
+The pipeline is implemented in Python 3.11.9 within a local virtual environment and organized around two Jupyter notebooks: \texttt{data\_pipeline\_stage\_1.ipynb} for extraction and warehouse loading, and \texttt{data\_pipeline\_stage\_2.ipynb} for transformation and downstream analysis. The main libraries used in the notebooks are \texttt{pandas} 3.0.1, \texttt{numpy} 2.4.3, \texttt{matplotlib} 3.10.8, \texttt{seaborn} 0.13.2, \texttt{scikit-learn} 1.8.0, \texttt{SQLAlchemy} 2.0.48 with \texttt{psycopg2-binary} 2.9.11 for PostgreSQL access, \texttt{joblib} 1.5.3 for serialized dataset loading, and \texttt{datacommons-client} 2.1.6 for external data extraction. This setup keeps the pipeline reproducible while separating notebook-based extraction, transformation, and analysis tasks.
+
+\section{Document Organization}
 In Chapter~\ref{ch2:recent-studies}, we will showcase the recent studies in analyzing COVID-19 socioeconomic and health effects with numerous methods applied worldwide, then in
-Chapter~\ref{ch3:dataset}, we're going to explore our data sources, curated dataset panel with QA, geographic scope, then our warehouse schema and missingness and coverage, then list our limitations and delimitation.
+Chapter~\ref{ch3:dataset}, we're going to explore our data sources, curated dataset panel with data quality checks, geographic scope, then our warehouse schema and missingness and coverage, then list our limitations and delimitation.
 Subsequent chapters present the methodology~\ref{ch4:methodology}, results and discussion~\ref{ch5:results}, and finally conclusions~\ref{ch6:conclusion}.
+
 
 \chapter{Recent Studies}\label{ch2:recent-studies}
 
-Studies that covered COVID-19 ranged from basic EDA and association studies to more advanced clustering and regression based on the huge amount of data reported by each countries and in more granular level: counties, cities and towns. In this chapter we will present and compare papers from the recent five years on scientific papers:
-
-Champion et. al~\cite{10487417} used statistical analysis to shed the light on the role of factors, mainly socioeconomic in health outcomes by extracting COVID-19 and labor force data in United States and analyzing the correlations and finding association between them. On the other hand, Anand et. al~\cite{10840438} explored different methods to delve deep down onto reported COVID-19 data across different states in India to understand the patterns and trends from infection rates, mortality rates, and healthcare resource utilization. 
-
-Machine learning is one of the methods used to analyze COVID-19 implications on education and economics in the Arab world~\cite{9811166}, by extracting social media content from Twitter API on related subjects using sentiment analysis and Natural Language Processing (NLP) and classification techniques with Random Forest (RF), Logistic Regression (LR), Naive Bayes (NB), and Voting classifier (VC) that would help decision makers to understand the public opinion regarding sensitive measures to tackle thee pandemic without losing popularity and works for the benefit of people. 
+Studies that covered COVID-19 ranged from basic EDA and association studies to more advanced clustering and regression based on the huge amount of data reported by each country and on a more granular level: counties, cities, and towns. Furthermore, studies covered a variety of fields and sectors impacted by COVID-19, addressing social, economic, health, technological, and other types of impacts faced during the COVID-19 pandemic or post-pandemic. This chapter discusses scientific papers from the past five years to understand how different methods were used to analyzie or predict COVID-19 impacts in different fields.
+\\
 
 
-Clustering were among the top methods to anaylze trends within COVID-19 data, a paper by Filimonov et. al~\cite{9455073}, identified patterns for COVID-19 in OECD countries in addition to China and Russia using k-means clustering method for group the countries based on pandemic development along with dynamic time warping (DTW) transformation algorithm to find similarities between countries. Park et. al ~\cite{9457942} also used similar techniques and compared them to K-Means but with Deep Learning Autoencoder; which is helpful when dealing with complex multi-collinear data to identify clusters between the counties in North Carolina, USA. Weather conditions played a major role in the infection rate of the pandemic, as it was found more transposable on dry climates,~\cite{9795511} one paper studied the correlation between them using K-Means clustering method. Exploratory data analysis was undertaken on 222 nations  by using K-Means clustering by the count of confirmed and death cases, that was done in early pandemic stages to prevent the dissemination of the disease worldwide.
+Champion et. al~\cite{10487417} used statistical analysis (Correlation Analysis) to shed light on the impact of socioeconomic factors on COVID-19 cases and deaths by extracting COVID-19 and labor force data in the United States and analyzing the correlations and associations between them. The analysis results show the high correlation between the COVID-19 cases and deaths with the socioeconomic factors of the labor force, such as work environment, type of work, inability to work remotely, and crowded living areas and neighbourhoods. These results also provide insights on required interventions and precautions to help governments mitigate the impact of pandemics. 
+\\
+\\
+Another research explored the socioeconomic factors' impact on COVID-19 by Anand et. al~\cite{10840438} that used a different method to delve deep into the reported COVID-19 data from across different states in India to understand the patterns and trends from infection rates, mortality rates, and healthcare resource utilization. The research used a multidisciplinary method, including statistical analysis, geographical mapping, and qualitative assessments: the authors used the Two-way ANOVA model for variance analysis, Holt Winter's Method to forecast future risks for states of India, and logistic regression. The analysis concludes with major findings that can be used to tailor public health policies and interventions based on each state's needs.
+\\
+
+Machine learning is one of the methods used to analyze COVID-19 implications on education and economics in the Arab world~\cite{9811166}, by extracting social media content from Twitter API on related subjects using sentiment analysis and Natural Language Processing (NLP) and classification techniques with Random Forest (RF), Logistic Regression (LR), Naive Bayes (NB), and Voting classifier (VC) that would help decision makers to understand the public opinion regarding sensitive measures to tackle the pandemic without losing popularity and works for the benefit of people. 
+\newline
+\newline
+
+
+Clustering was among the top methods to analyze trends within COVID-19 data, a research paper by Filimonov et. al~\cite{9455073}, identified patterns for COVID-19 in The Organization for the Economic Cooperation and Development (OECD) countries, which includes 38 member countries, in addition to China and Russia. The researchers used the k-means clustering method to group the countries based on pandemic development, along with a dynamic time warping (DTW) transformation algorithm to find similarities between countries, depending mainly on the data from the "Our World in Data" site and the International Monetary Fund. The analysis identified six clusters with different rates of COVID-19 development, and compared the Gross Domestic Product (GDP) values between 2019 and 2020 for the countries of each cluster to highlight and predict the economic impact of COVID-19 on these countries.
+\\
+\\
+Park et. al ~\cite{9457942} investigated the hidden patterns in clustering COVID-19 infection and morbidity cases; the researchers incorporated the dynamic time wraping (DTW) technique and the Deep Learning Autoencoder to identify clusters between the counties in North Carolina, USA, using the North Carolina county-wise COVID-19 data from GitHub COVID-19 Data Set which is the data repository of the Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE). After applying both techniques on the data set, clustering results were compared for 100 counties, identifying the same top cluster for the most populated counties, but different results for the remaining counties, and more complex clusters by Autoencoder.
+\\
+\\
+In the attempt to visualize the risk of COVID-19 spread and support governments and officials in taking precautions against it, a research paper by Saini et al.~\cite{9358331}  studied the open dataset of 2019‐nCoV by Johns Hopkins University for 222 countries' dashboards and Google Sheets. Alongside the visual exploratory analysis, an Exploratory data analysis was also undertaken on these countries by using K-Means clustering by the count of confirmed and death cases, which was done in the early pandemic stages to prevent the dissemination of the disease worldwide.
+\newline
+
+To further understand the COVID-19 spread, authors of the research paper ~\cite{9795511} studied the correlation between weather conditions and COVID-19 transmission by using a globally used dataset (Kaggle) and the non-linear model Random Forest in combination with the K-means clustering method to identify clusters. 
+\\
+\\
+One more research paper by Tangprasert et al. ~\cite{tangprasert2023forecasting} used K-means clustering and Seasonal Patterns techniques to analyze and predict the spread of COVID-19 using data from multiple organizations worldwide on GitHub for 51 Asian countries. The research resulted in three clusters that were used to predict the infection in Asian countries.  
+
+\\
+
+The ML models have also been used to study the impact of COVID-19 on mental health; Fong et al.~\cite{fong2024predicting} and Shuster et al.~\cite{shuster2021emotional} used different models on the same dataset to examine the impact of global crises on anxiety and depression levels. The data set used in their research was a relatively small dataset based on survey results for 1512 adults living in the US, where the data were collected weekly for the same sample over a period of 10 weeks, addressing 308 demographic and psychological features. Fong et. al research used a deep learning-based MLPs to model complex and nonlinear relationships rather than using linear models used by Shuster et. al, assuming it improves prediction accuracy. Fong et. al COVID-19 Depression and Anxiety Predictor has focused on anticipating the depression and anxiety level for individuals, taking into consideration different factors and attributes such as age, gender, religion, mental health disorders for participants, and other qualitative features. As a result, their predictive model can be used in global health crises to enable the understanding of psychological impacts and alert professionals if medical interventions are needed.
+
+On the other hand, Shuster et. al, who created the dataset, used a linear-mixed effects model to study different factors' impact on anxiety and depression levels during the first wave of COVID-19 in the US. Although the research has not discussed the model architecture intensively, it helped to understand different factors and the anxiety and depression levels associated with them. 
+\\
+
+In summary, the recent studies have explored a wide range of techniques for COVID-19 data analysis and forecasting, ranging from traditional statistical analysis to advanced ML methods, forecasting, and clustering approaches applied to large and complex datasets worldwide. These studies pinpointed several factors that influenced the impact and spread of COVID-19, including socioeconomic factors, demographic factors, healthcare infrastructure factors,   and governmental policies and crisis management strategies. Although the research papers have focused on common influencing factors, they deployed different techniques, such as traditional correlation analysis, regression models, ANOVA, and clustering techniques, while Machine Learning approaches provided insights and forecasts related to COVID-19 impact, trends, and predictive analysis. The research papers' findings also highlight the importance of COVID-19 pandemic analysis and forecasts to governments and decision/policy makers who take preventive actions, precautions, or needed interventions during global health crises. 
+\\
+Nevertheless, limited research has addressed COVID-19 trends and impacts in the MENA countries, despite possessing distinct demographic, socioeconomic, and healthcare characteristics. Accordingly, this research focuses on the COVID-19 impact across MENA countries by applying the k-means clustering technique to find similarities and trends among these countries.
+ 
 
 \begin{table}[h!]
     \centering
@@ -311,23 +357,30 @@ assessments) & PRS Legislative Research India \\
         \hline
         ~\cite{9358331} & 2020 & IEEE & Exploratory data analysis with K-Means Clustering & open dataset by Johns Hopkins University \\
         \hline
+         
+        ~\cite{tangprasert2023forecasting} & 2023 & ACM & K-Means Clustering and Seasonal Patterns techniques & GitHub \\
+        \hline
+          ~\cite{fong2024predicting} & 2024 & ACM & deep learning-based MLPs (non-Linear) & Survey Results for 1512 Adults in the US over 10 weeks period \\
+        \hline
+         ~\cite{shuster2021emotional} & 2021 & Springer Nature & Linear-mixed effects model & Survey Results for 1512 Adults in the US over 10 weeks period \\
+        \hline
+        
     \end{tabular}
 \end{table}
 
-
 \chapter{Dataset}\label{ch3:dataset}
-\section{Data sources}
+\section{Data Sources}
 The dataset is constructed by integrating multiple public indicator sources (e.g., health outcomes, vaccination, demographic and socioeconomic context) accessed via the Google Data Commons API~\cite{google_datacommons_api}.
 All extracted series are reshaped into a single long-form contract and then loaded into a local PostgreSQL data warehouse.
 
-\section{Collected source columns and descriptions}
+\section{Source Indicators}
 The pipeline currently collects 13 source indicators from the external data source.
 Table~\ref{tab:source-indicator-codes} lists a cleaned, self-descriptive indicator name used for reporting together with a short description.
 
 \begin{table}[h]
     \centering
     \scriptsize
-    \caption{Collected source indicators with codes and descriptions}
+    \caption{Source Indicators}
     \label{tab:source-indicator-codes}
     \begin{tabular}{|p{0.30\textwidth}|p{0.62\textwidth}|}
         \hline
@@ -362,12 +415,12 @@ Table~\ref{tab:source-indicator-codes} lists a cleaned, self-descriptive indicat
     \end{tabular}
 \end{table}
 
-\section{Geographic scope}
+\section{Geographic Scope}
 The pipeline enforces a fixed geographic scope through a 16-country allowlist.
 The included countries follow the fixed scope defined in Section 1.4 (Scope and unit of analysis).
-This hard filter ensures that transformations, curated analysis tables, and QA summaries are computed consistently for the same set of countries and are not silently contaminated by out-of-scope geographies.
+This hard filter ensures that transformations, curated analysis tables, and data quality summaries are computed consistently for the same set of countries and are not silently contaminated by out-of-scope geographies.
 
-\section{Observation model and schema}
+\section{Observation Model and Schema}
 Before loading and transformation, all source time series are normalized to the following long schema:
 \begin{itemize}
     \item \texttt{date}: observation timestamp (daily/monthly/yearly depending on indicator)
@@ -377,43 +430,48 @@ Before loading and transformation, all source time series are normalized to the 
 \end{itemize}
 In the warehouse, observations are stored in a star schema with country, indicator, and source dimensions and a fact table of observations.
 
-\section{Curated analysis tables}
-After loading, the pipeline creates curated outputs for analysis:
+\section{Curated Tables}
+After loading, the pipeline produces a curated transformation layer that is reused downstream (rather than recomputing business rules separately in each analysis stage).
+This layer includes both (i) curated analysis tables that organize indicators into analysis-friendly subject areas, and (ii) explicit modeling views that are consumed by Stage 2 clustering and Stage 3 forecasting.
+
+\textbf{Curated analysis tables (transformation outputs):}
+The transformation layer produces analysis-friendly tables that (i) harmonize indicators into consistent panels and (ii) separate outcomes, vaccination progression, and contextual covariates into subject-oriented views.
+These data views mainly serve two purposes: they make data quality checks and reporting reproducible, and they provide a stable, governed basis for constructing the downstream modeling views used in Stages 2--3.
+
+\textbf{Modeling views (consumed by downstream stages):}
 \begin{itemize}
-    \item \textbf{Long panel table}: harmonized indicator series in long format.
-    \item \textbf{Yearly panel table}: annualized/aggregated view for slow-moving contextual covariates.
-    \item \textbf{Health outcomes table}: outcomes-focused view (cases, deaths, derived rates).
-    \item \textbf{Vaccination table}: vaccination progression metrics and lags.
-    \item \textbf{Context table}: demographic and socioeconomic context variables.
+    \item \textbf{Unbalanced panel} (\texttt{ds\_unbalanced\_panel}): primary Stage 2 input; also used as a forecasting input when exported.
+    \item \textbf{Balanced core} (\texttt{ds\_balanced\_core}): sensitivity/robustness view under stricter overlap constraints.
+    \item \textbf{Country longitudinal views} (\texttt{country\_longitudinal\_views}): longest available history per country for diagnostics and time-series inspection.
 \end{itemize}
 
-\section{Missingness and coverage}
+\section{Missingness and Coverage}
 Due to heterogeneous reporting across sources and countries, missingness is expected.
-The pipeline therefore generates QA artifacts that summarize:
+The pipeline therefore generates data quality artifacts that summarize:
 \begin{itemize}
     \item Missingness by country and variable.
     \item Completeness matrices to visualize gaps.
     \item Start/end date coverage by country-feature pair.
 \end{itemize}
-These QA outputs guide downstream modeling decisions such as exclusion of fully-missing pairs and conservative imputation policies.
+These data quality outputs guide downstream modeling decisions such as exclusion of fully-missing pairs and conservative imputation policies.
 
 \section{Limitations}
 Key limitations include non-overlapping time windows across indicators and countries, inconsistent update frequency, and differing measurement definitions across sources.
 Accordingly, downstream analysis must either restrict to common windows, build unbalanced panels, or use dataset views that are explicit about coverage constraints.
 
-\section{Delimitation}
+\section{Delimitations}
 We're only studying the socioeconomic effect in addition to health and demographics to draw associations from COVID-19 publicly shared data by the representative health ministries of the exclusive countries considered to be part of (MENA) region.
 
 \chapter{Methodology}\label{ch4:methodology}
-\section{Hypothesis and analytical intent}
+\section{Hypothesis and Analytical Intent}
 This chapter presents the methodology as a connected pipeline story: we first build a reliable warehouse foundation (Stage 1), then use the cleaned and policy-filtered outputs for descriptive segmentation (Stage 2), and finally produce country-level forecasts from the same governed data contract (Stage 3).
 The central hypothesis is that integrating public health outcomes, vaccination progress, demographic context, and macro-socioeconomic indicators into one ELT workflow enables reproducible cross-country analysis of COVID-19 impacts in the MENA region.
 Under this setup, we expect two outcomes: first, countries with similar trajectories and context will form interpretable clusters; second, forecasting on transformed country panels will be feasible when coverage and missingness are handled consistently.
 
-\section{Data preparation}
+\section{Data Preparation}
 Data preparation begins from the previously defined geographic scope (Section 1.4).
 The extracted observations are standardized to a common long schema with \texttt{date}, \texttt{entity}, \texttt{variable}, and \texttt{value}, then loaded into a PostgreSQL warehouse as country, indicator, source, and observation tables.
-This preparation step also enforces consistent naming, removes out-of-scope geographies, and preserves QA outputs that expose missingness and coverage gaps before downstream analysis.
+This preparation step also enforces consistent naming, removes out-of-scope geographies, and preserves data quality outputs that expose missingness and coverage gaps before downstream analysis.
 
 In practical terms, this step is the handoff point between raw source collection and analysis: once a country-time observation is normalized and validated here, it can be reused consistently by all later stages without redefining business rules in multiple places.
 
@@ -424,24 +482,24 @@ Because the indicators are not uniformly available for the same countries and ti
     \item \textbf{Country longitudinal views} (\texttt{country\_longitudinal\_views}): keeps the longest available history per country to support diagnostics and exploratory time-series inspection when the strict overlap window would be too short.
 \end{itemize}
 
-\section{ELT pipeline design}
+\section{ELT Pipeline Design}
 The project follows an ELT architecture that directly maps to the three implementation stages used in this capstone.
 \begin{enumerate}
     \item \textbf{Extract}: retrieve public series from the Google Data Commons API and other published statistical sources.
     \item \textbf{Load}: store normalized observations in a star-schema warehouse for repeatable access and structural validation.
-    \item \textbf{Transform}: derive curated analysis tables, QA tables, clustering summaries, and forecasting artifacts used by Stages 2 and 3.
+    \item \textbf{Transform}: derive curated analysis tables, data quality tables, clustering summaries, and forecasting artifacts used by Stages 2 and 3.
 \end{enumerate}
 
 This separation keeps the raw source contract stable while allowing analysis-specific reshaping in a controlled, reproducible layer.
 The output of each stage is intentionally the input to the next stage.
 
-\section{Stage 1: warehouse build and structural validation}
+\section{Stage 1: Warehouse Build and Validation}
 \subsection{Data Gathering and Normalization}
 Stage 1 is the foundation stage. We extract and normalize source observations, load them into the warehouse, and validate that the core dimensional model can support the downstream analytical questions.
 The loaded warehouse includes country, indicator, and source dimensions together with a fact table of observations~\ref{fig:stage1-erd-placeholder}.
-This stage produces the first governed version of the data and therefore defines what Stage 2 and Stage 3 are allowed to consume. Google Data Commons provides indicator observations as reported for each DCID (raw counts or ratios) rather than a pre-harmonized analytic panel, so comparability is enforced in the pipeline.
+This stage produces the first governed version of the data and therefore defines what Stage 2 and Stage 3 are allowed to consume.
 
-In practice, we (i) apply a fixed 16-country allowlist and consistent country naming, (ii) normalize all extracted series into the common long-form schema (\texttt{date}, \texttt{entity}, \texttt{variable}, \texttt{value}) for warehouse loading, and (iii) derive analysis-ready units where required. For example, cumulative case and death counts are converted into per-capita rates for reporting and comparison. Vaccination coverage indicators are retrieved as fractions in $[0,1]$; for readability in curated outputs, we convert them to percentages in $[0,100]$ (i.e., multiply by 100).
+In practice, we (i) apply a fixed 16-country allowlist and consistent country naming, (ii) normalize all extracted series into the common long-form schema (\texttt{date}, \texttt{entity}, \texttt{variable}, \texttt{value}) for warehouse loading, and (iii) derive analysis-ready units where required. For example, cumulative case and death counts are converted into per-capita rates for reporting and comparison. Vaccination coverage indicators are retrieved as fractions in $[0,1]$; for readability in downstream stages and visualization, we convert them to percentages in $[0,100]$ (i.e., multiply by 100).
 
 \texttt{cases\_per\_million} $= \frac{\texttt{cases}}{\texttt{population}} \times 10^6$
 
@@ -477,11 +535,11 @@ The policy-filtered panel (75,928 rows) is then used as the input to Stage 2 (cl
 
 \begin{table}[h]
     \centering
-    \caption{Stage 1 QA missingness results}
+    \caption{Stage 1 Missingness Checks}
     \label{tab:stage1-qa-missingness}
     \begin{tabular}{|p{0.43\textwidth}|p{0.47\textwidth}|}
         \hline
-        \textbf{QA missingness metric} & \textbf{Observed Stage 1 result} \\
+        \textbf{Missingness metric} & \textbf{Observed Stage 1 result} \\
         \hline
         Overall rows in staging table & 77,229 total rows \\
         \hline
@@ -504,11 +562,11 @@ The policy-filtered panel (75,928 rows) is then used as the input to Stage 2 (cl
     \end{tabular}
 \end{table}
 
-\section{Stage 2: Clustering and Relationship Analysis}
+\section{Stage 2: Clustering Analysis}
 Stage 2 begins from the policy-filtered outputs of Stage 1 and shifts the objective from data readiness to structure discovery.
 In this stage, we study how COVID outcomes, vaccination progression, and contextual indicators co-vary across countries, and we apply techniques to find those relationships, then cluster them accordingly, so we can associate their contextual features with COVID-19 metrics during that pandemic period.
 
-\subsection{Clustering inputs and feature basis}
+\subsection{Clustering Inputs}
 Clustering is performed at the \textbf{country} level.
 The pipeline starts from the policy-filtered panel (after applying the tiered missingness policy that excludes country-variable pairs with $\geq$80\% missingness), then constructs a country-level feature matrix by taking the \textbf{median} value per country over time.
 % To keep the segmentation descriptive (and avoid circularity), derived COVID and engineered features (e.g., \texttt{cases\_per\_million}, \texttt{deaths\_per\_million}, \texttt{case\_fatality\_rate\_pct}, vaccination gaps, and lag features) are excluded from the clustering feature candidates.
@@ -519,7 +577,7 @@ The contextual indicators used to form the country feature matrix in this run ar
 
 \begin{table}[h]
     \centering
-    \caption{Stage 2 clustering feature basis (country-level medians from contextual indicators)}
+    \caption{Stage 2 Feature Basis}
     \label{tab:stage2-feature-basis}
     \begin{tabular}{|p{0.4\textwidth}|p{0.5\textwidth}|}
         \hline
@@ -554,12 +612,12 @@ In this run, the final selected drivers used in model fitting were total populat
     \label{fig:pca-results}
 \end{figure}
 
-\subsection{Cluster Count Selection (Silhouette)}
+\subsection{Cluster Count Selection}
 Candidate cluster counts were evaluated using silhouette score; the KMeans selection summary is reported in Table~\ref{tab:stage2-silhouette-summary}.
 
 \begin{table}[h]
     \centering
-    \caption{Stage 2 KMeans cluster-count diagnostics (silhouette score)}
+    \caption{Stage 2 Silhouette Summary}
     \label{tab:stage2-silhouette-summary}
     \begin{tabular}{|c|c|c|c|}
         \hline
@@ -609,18 +667,25 @@ The current run covers all 16 countries in scope and produces three clusters wit
     \item Cluster 3: 3 countries: Egypt, Iran, and Turkey
 \end{itemize}
 
-\section{Stage 3: forecasting design}
+\section{Stage 3: Forecasting Design}
 In the final stage, in our data pipeline we've used a forecasting model to help us predict near future outcomes for the selected COVID-19 metrics per country.
 Stage 3 uses the same governed, policy-filtered panels produced in Stage 1 to generate country-level forward-looking estimates for a small set of decision-relevant indicators.
 This keeps the forecasting step consistent with the upstream data contract: the same country-variable coverage rules and imputation policies that support clustering also define what forecasting is allowed to consume.
 
-Forecasts are generated for four key metrics: \texttt{case\_fatality\_rate\_pct}, \texttt{vax\_at\_least\_one\_pct}, \texttt{vax\_primary\_pct}, and \texttt{vax\_booster\_pct}.
+Forecasts are generated for four key metrics: 
+\begin{itemize}
+    \item \texttt{case\_fatality\_rate\_pct}
+    \item \texttt{vax\_at\_least\_one\_pct}
+    \item \texttt{vax\_primary\_pct}
+    \item \texttt{vax\_booster\_pct}
+\end{itemize}
+
 The forecasting inputs are exported from the policy-filtered panel view to ensure reproducible preprocessing and alignment of transformations across stages.
 
 We selected ARIMA as the primary baseline model (rather than exponential smoothing / (Error, Trend, Seasonal) ETS) because the target series are heterogeneous across countries and often exhibit non-stationarity, autocorrelation, and regime changes driven by reporting practices and policy shifts.
 ARIMA provides an explicit differencing mechanism to stabilize level shifts and a flexible error structure to capture serial dependence, while remaining lightweight enough to fit repeatedly across many country--metric series with limited history.
-ETS methods are effective when a series can be well-described by (STL) decomposition, but for several COVID-era indicators the dominant behavior is not a repeating seasonal pattern; instead it is a mixture of waves, plateaus, and structural breaks.
-Accordingly, ARIMA is used as a consistent, reproducible baseline with out-of-sample evaluation, while ETS remains a reasonable alternative for future model comparison on a per-metric basis. ARIMA will help us in this case to generate future outcomes with a confidence interval that shows the minimum and maximum boundaries of the predicted values, the bigger the interval the least confidence we have.
+ETS methods are effective when a series can be well-described by Seasonal and Trend (STL) decomposition, but for several COVID-era indicators the dominant behavior is not a repeating seasonal pattern; instead it is a mixture of waves, plateaus, and structural breaks.
+Accordingly, ARIMA is used as a consistent, reproducible baseline with out-of-sample evaluation, while ETS remains a reasonable alternative for future model comparison on a per-metric basis. ARIMA will help us in this case to generate future outcomes with a confidence interval that shows the uncertainty we have in our forecasting model with minimum and maximum boundaries of the predicted values, the bigger the interval and the further the point we are predicting from the last recent history data point the least confidence we have.
 
 
 \chapter{Results and Discussion}\label{ch5:results}
@@ -639,13 +704,14 @@ Figure~\ref{fig:stage2-covid-outcomes} shows the comparison of the three groups 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.98\textwidth]{transformed/cluster_covid_median_iqr.png}
-    \caption{Stage 2 cluster-level COVID outcomes (median with IQR) for \texttt{cases\_per\_million}, \texttt{deaths\_per\_million}, and \texttt{case\_fatality\_rate\_pct}.}
+    \caption{Stage 2 COVID outcomes by cluster (median with IQR).}
     \label{fig:stage2-covid-outcomes}
 \end{figure}
 
 Figure~\ref{fig:stage2-profile-heatmap} summarizes the contextual feature profiles of the three clusters using a heatmap. Columns correspond to the base contextual indicators used to form the clustering feature matrix (e.g., population size, GDP per capita, life expectancy, fertility, labor-force participation, rural population), and rows correspond to the discovered clusters. Each cell shows the cluster’s typical level for that feature (computed from the country-level summaries used in Stage 2), displayed on a common color scale, so that darker/lighter shading indicates relatively higher/lower values within each feature. The heatmap therefore provides an interpretable “fingerprint” of each cluster---highlighting which structural characteristics most distinguish clusters---and complements the outcome comparisons in Figure~\ref{fig:stage2-covid-outcomes}.
 
-To check whether these cluster--outcome relationships are sensitive to how coverage is handled, we also compare results between the unbalanced panel view (\texttt{ds\_unbalanced\_panel}) and the balanced core view (\texttt{ds\_balanced\_core}). The robustness comparison diagram is provided in Appendix Figure~\ref{fig:stage2-robustness}.
+To check whether these cluster--outcome relationships are sensitive to how coverage is handled, we also compare results between the unbalanced panel view (\texttt{ds\_unbalanced\_panel}) and the balanced core view (\texttt{ds\_balanced\_core}). When the strict overlap window is too short for exploratory inspection, we use \texttt{country\_longitudinal\_views} as a diagnostic view that preserves the longest available history per country.
+The robustness comparison diagram is provided in Appendix Figure~\ref{fig:stage2-robustness}.
 
 \begin{figure}[h]
     \centering
@@ -654,7 +720,7 @@ To check whether these cluster--outcome relationships are sensitive to how cover
     \label{fig:stage2-profile-heatmap}
 \end{figure}
 
-\section{Stage 3: forecasting results and discussion}
+\section{Stage 3: Forecasting Results}
 Stage 3 extends the descriptive segmentation results by turning the same governed, policy-filtered inputs into country-level forward-looking estimates.
 This section reports what was produced by the forecasting run, summarizes model performance at a high level, and highlights practical limitations driven by coverage differences across series.
 
@@ -676,12 +742,12 @@ As illustrated in Figure~\ref{fig:stage3-forecasts}, it shows a forecast line ch
 \chapter{Conclusion}\label{ch6:conclusion}
 
 In conclusion, we have built an ELT data pipeline to study the health and socioeconomic impact of COVID-19 on MENA region by collecting data from reliable data sources through Google Data Commons APIs, analyzing the data, transforming, and standardizing the data per capita and using accumulative percentages and ratios, then we applied clustering-based analysis by extracting the features with highest variability using PCA, and Silhouette for selecting the number of clusters, then K-Means to group the countries within each cluster, then finally we applied short-term forecasting for our COVID-19 metrics per country.
-This capstone delivers a set of linked outputs that support auditing and reuse: warehouse tables, curated analysis tables, QA logs, cluster summaries, forecast tables, and regenerated ERD artifacts.
+This capstone delivers a set of linked outputs that support auditing and reuse: warehouse tables, curated analysis tables, data quality logs, cluster summaries, forecast tables, and regenerated ERD artifacts.
 Together, these deliverables make it possible to trace the analysis from extraction through loading, transformation, segmentation, and forecast generation without relying on ad hoc manual steps.
 
 
 \begin{appendices}
-\appendixchapter{Additional silhouette diagnostics}
+\appendixchapter{Additional Silhouette Diagnostics}
 Silhouette plots for higher candidate cluster counts are included here for completeness.
 
 \begin{figure}[h]
@@ -698,13 +764,13 @@ Silhouette plots for higher candidate cluster counts are included here for compl
     \label{fig:appendix-silhouette-k6}
 \end{figure}
 
-\appendixchapter{Stage 2 robustness comparison}
+\appendixchapter{Stage 2 Robustness Comparison}
 This appendix figure reports a sensitivity check comparing the unbalanced panel view (\texttt{ds\_unbalanced\_panel}) with the balanced core view (\texttt{ds\_balanced\_core}).
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.90\textwidth]{transformed/cluster_robustness_metric_comparison.png}
-    \caption{Stage 2 robustness comparison between \texttt{ds\_unbalanced\_panel} and \texttt{ds\_balanced\_core}. The left panel reports absolute between-cluster separation as the range of cluster medians in original units. The right panel reports relative separation as the same range expressed as a percentage of the metric's typical level (range / median), enabling fairer comparison across metrics with different scales.}
+    \caption{Stage 2 robustness check: unbalanced vs. balanced panels.}
     \label{fig:stage2-robustness}
 \end{figure}
 \end{appendices}
